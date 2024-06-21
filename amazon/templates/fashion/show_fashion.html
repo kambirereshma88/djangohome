@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>welcome to amazon</title>
+    
+  </head>
+  <body>
+    <h1>Hello, world! welcome to amazon fashion world </h1>
+    {% if fashion_list %}
+    <p>following are the patterns</p>
+    <table border="1" cellspacing="0" cellpadding="10" align="center">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>FASHION NAME</th>
+            <th>DELIVERY DATE</th>
+
+          </tr>
+        </thead>
+        <tbody>
+            {%  for fashion in fashion_list %}
+          <tr>
+            <th>{{fashion.id}}</th>
+            <td>{{fashion.fashion_name}}</td>
+            <td>{{fashion.delivery_date}}</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+      {% else %}
+      <p>no fashion found </p>
+      {% endif %}
+    
+  </body>
+</html>
